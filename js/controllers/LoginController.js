@@ -1,53 +1,68 @@
 // Check strict
 'use strict';
 
-// Always Start with Anonymous function
-( function() {
-    window.onload = init;
+var LoginController = ( function() {
 
-    function init() {
-
-        // Event Listeners
-        addEventListeners();
+    // Start with Class Structure and Prototype
+    // This is constructor as well
+    function LoginController() {
+        this.username = '';
+        this.password = '';
+        this.init();
     }
 
-    function addEventListeners() {
+    // Init Function
+    LoginController.prototype.init = function() {
+        // Event Listeners
+        this.addEventListeners();
+    }
+
+    // Add Event Listeners
+    LoginController.prototype.addEventListeners = function() {
         // Get Login Form By ID
-        var getLgoinForm = document.getElementById('loginForm');
+        var getLgoinForm = document.getElementById('formLogin');
 
         // Catch Submit Event
-        getLgoinForm.addEventListener('submit', getLoginFormData);
+        //getLgoinForm.addEventListener('submit', this.getLoginFormData);
+
+        $( getLgoinForm ).on('submit', { context: this }, this.getLoginFormData);
     }
 
-    function getLoginFormData(event) {
+    // Get Login Form Data
+    LoginController.prototype.getLoginFormData = function( event ) {
+        // This is class scope so we used `that` instead of this.
+        var that = event.data.context;
+
+        // Here `this` is the form scope
         // Get Data with Serialize Array using jQuery
         var LoginFormData = $(this).serializeArray();
 
+        // We used `that` as a class scope here.
         // Extract Data
-        extractLoginFormData(LoginFormData);
+        that.extractLoginFormData(LoginFormData);
     }
 
-    function extractLoginFormData( getData ) {
-        // Define variables
-        var username = null;
-        var password = null;
-
+    // Extract Login Form Data
+    LoginController.prototype.extractLoginFormData = function( getData ) {
         // Extract values from Array
         for( var i = 0; i < getData.length; i++ ) {
 
             // Check for Username
             if( getData[i].name === 'username' ) {
-                username = getData[i].value;
+                this.username = getData[i].value;
             }
 
             // Check for Password
             if( getData[i].name === 'password' ) {
-                password = getData[i].value;
+                this.password = getData[i].value;
             }
         }
 
-        console.log(username);
-        console.log(password);
+        console.log(this.username);
+        console.log(this.password);
     }
 
-} ) ();
+    // Return Controller
+    return LoginController;
+
+})();
