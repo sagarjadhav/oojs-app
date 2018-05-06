@@ -1,40 +1,40 @@
 {
     "Employees" : [
-    {
-    "firstName":"Veeraj",
-    "lastName":"Jadhav",
-    "emailId":"veeraj@gmail.com",
-    "contactNo":"1234567890",
-    "designation":"Developer"
-    },
-    {
-    "firstName":"Sagar",
-    "lastName":"Jadhav",
-    "emailId":"sagar@gmail.com",
-    "contactNo":"1234567891",
-    "designation":"WP Developer"
-    },
-    {
-    "firstName":"Akshay",
-    "lastName":"Jadhav",
-    "emailId":"akshay@gmail.com",
-    "contactNo":"44322222323",
-    "designation":"Web Developer"
-    },
-    {
-    "firstName":"Nitin",
-    "lastName":"Patil",
-    "emailId":"patiln@gmail.com",
-    "contactNo":"9898989231",
-    "designation":"Tester"
-    },
-    {
-    "firstName":"Amol",
-    "lastName":"Jawle",
-    "emailId":"amol@gmail.com",
-    "contactNo":"9988992866",
-    "designation":"WP Developer"
-    }
+        {
+            "firstName":"Veeraj",
+            "lastName":"Jadhav",
+            "emailId":"veeraj@gmail.com",
+            "contactNo":"1234567890",
+            "designation":"Developer"
+        },
+        {
+            "firstName":"Sagar",
+            "lastName":"Jadhav",
+            "emailId":"sagar@gmail.com",
+            "contactNo":"1234567891",
+            "designation":"WP Developer"
+        },
+        {
+            "firstName":"Akshay",
+            "lastName":"Jadhav",
+            "emailId":"akshay@gmail.com",
+            "contactNo":"44322222323",
+            "designation":"Web Developer"
+        },
+        {
+            "firstName":"Nitin",
+            "lastName":"Patil",
+            "emailId":"patiln@gmail.com",
+            "contactNo":"9898989231",
+            "designation":"Tester"
+        },
+        {
+            "firstName":"Amol",
+            "lastName":"Jawle",
+            "emailId":"amol@gmail.com",
+            "contactNo":"9988992866",
+            "designation":"WP Developer"
+        }
     
     ]
 }

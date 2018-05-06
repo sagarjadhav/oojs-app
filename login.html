@@ -2,17 +2,25 @@
 <html class="no-js" lang="en-US">
 	<head>
 		<meta charset="utf-8" />
-    <title>Login</title>
+        <title>Login</title>
 
-    <!-- Style -->
-    <link href="./assets/styles/bootstrap.min.css" media="all" rel="stylesheet" />
+        <!-- Style -->
+        <link href="./assets/styles/bootstrap.min.css" media="all" rel="stylesheet" />
 
-    <!-- jQuery -->
-    <script src='./js/lib/jquery-3.3.1.min.js'></script>
+        <!-- jQuery -->
+        <script src='./js/libs/jquery-3.3.1.min.js'></script>
 
-    <!-- Login Controller -->
-    <script src='./js/controllers/LoginController.js'></script>
+        <!-- CONSTANT -->
+        <script src='./js/utils/CONSTANT.js'></script>
 
+        <!-- Service Manager -->
+        <script src='./js/services/ServiceManager.js'></script>
+
+        <!-- Login Model -->
+        <script src='./js/models/LoginModel.js'></script>
+
+        <!-- Login Controller -->
+        <script src='./js/controllers/LoginController.js'></script>
 	</head>
 
 	<body>
@@ -33,12 +41,12 @@
                                 <form class="form" role="form" autocomplete="off" id="formLogin" onsubmit="return false">
                                     <div class="form-group">
                                         <label for="uname1">Username</label>
-                                        <input type="text" class="form-control form-control-lg rounded-0" name="username" id="username" required="required">
+                                        <input type="text" class="form-control form-control-lg rounded-0" name="username" id="username" required="required" />
                                         <div class="invalid-feedback">Oops, you missed this one.</div>
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="password" class="form-control form-control-lg rounded-0" name="password" id="password" required="required" autocomplete="new-password">
+                                        <input type="password" class="form-control form-control-lg rounded-0" name="password" id="password" required="required" autocomplete="new-password" />
                                         <div class="invalid-feedback">Enter your password too!</div>
                                     </div>
                                     <button type="submit" class="btn btn-success btn-lg" id="btnLogin">Login</button>
@@ -63,7 +71,7 @@
 
     <script>
         window.onload = function() {
-            var obj = new LoginController();
+            var loginControllerObject = new LoginController();
         }
     </script>
 

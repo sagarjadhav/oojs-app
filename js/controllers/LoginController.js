@@ -8,6 +8,7 @@ var LoginController = ( function() {
     function LoginController() {
         this.username = '';
         this.password = '';
+        this.loginModelObject = new LoginModel();
         this.init();
     }
 
@@ -58,8 +59,11 @@ var LoginController = ( function() {
             }
         }
 
-        console.log(this.username);
-        console.log(this.password);
+        // Pass username/password to validateUser
+        this.loginModelObject.validateUser(this.username, this.password);
+
+        // console.log(this.username);
+        // console.log(this.password);
     }
 
     // Return Controller
