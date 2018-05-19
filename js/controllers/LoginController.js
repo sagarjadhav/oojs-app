@@ -60,7 +60,15 @@ var LoginController = ( function() {
         }
 
         // Pass username/password to validateUser
-        this.loginModelObject.validateUser(this.username, this.password);
+        this.loginModelObject.validateUser(this.username, this.password).then( function (isValid) {
+            if( isValid ) {
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Invalid Credentials');
+            }
+        }).fail( function(error){
+            alert(error);
+        });
 
         // console.log(this.username);
         // console.log(this.password);
