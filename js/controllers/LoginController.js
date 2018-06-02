@@ -1,7 +1,8 @@
-// Check strict
-'use strict';
-
-var LoginController = ( function() {
+define([
+    'js/models/LoginModel'
+], function(LoginModel) {
+    // Check strict
+    'use strict';
 
     // Start with Class Structure and Prototype
     // This is constructor as well
@@ -77,4 +78,4 @@ var LoginController = ( function() {
     // Return Controller
     return LoginController;
 
-})();
+});

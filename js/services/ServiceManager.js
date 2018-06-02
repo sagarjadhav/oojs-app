@@ -1,7 +1,8 @@
-// Use Strict
-'user strict';
-
-var ServiceManager = ( function() {
+define([
+    'js/utils/CONSTANT',
+], function(CONSTANT) {
+    // Use Strict
+    'user strict';
 
     // Constructor
     function ServiceManager() {
@@ -35,4 +36,4 @@ var ServiceManager = ( function() {
 
     // Return Class
     return ServiceManager;
-})();
+});

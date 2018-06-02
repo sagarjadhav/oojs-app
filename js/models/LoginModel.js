@@ -1,7 +1,9 @@
-// Use Strict
-'user strict';
-
-var LoginModel = ( function() {
+define([
+    'js/utils/CONSTANT',
+    'js/services/ServiceManager',
+], function(CONSTANT, ServiceManager) {
+    // Use Strict
+    'user strict';
 
     // Constructor
     function LoginModel() {
@@ -37,4 +39,4 @@ var LoginModel = ( function() {
 
     // Return Class
     return LoginModel;
-})();
+});

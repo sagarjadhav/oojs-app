@@ -10,17 +10,21 @@
         <!-- jQuery -->
         <script src='./js/libs/jquery-3.3.1.min.js'></script>
 
+        <!-- Require -->
+        <script src='./js/libs/require.js'></script>
+
         <!-- CONSTANT -->
-        <script src='./js/utils/CONSTANT.js'></script>
+        <!-- <script src='./js/utils/CONSTANT.js'></script> -->
 
         <!-- Service Manager -->
-        <script src='./js/services/ServiceManager.js'></script>
+        <!-- <script src='./js/services/ServiceManager.js'></script> -->
 
         <!-- Login Model -->
-        <script src='./js/models/LoginModel.js'></script>
+        <!-- <script src='./js/models/LoginModel.js'></script> -->
 
         <!-- Login Controller -->
-        <script src='./js/controllers/LoginController.js'></script>
+        <!-- <script src='./js/controllers/LoginController.js'></script> -->
+
 	</head>
 
 	<body>
@@ -70,9 +74,15 @@
     <!--/container-->
 
     <script>
-        window.onload = function() {
+        // window.onload = function() {
+        //     var loginControllerObject = new LoginController();
+        // }
+
+        require(['js/controllers/LoginController'],
+            function(LoginController) {
+            // Configuration loaded now, safe to do other require calls
             var loginControllerObject = new LoginController();
-        }
+        });
     </script>
 
 	</body>
