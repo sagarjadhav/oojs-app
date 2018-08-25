@@ -5,12 +5,18 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <title>TODO supply a title</title>
+        <head>
+                <title>TODO supply a title</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link href="./assets/styles/bootstrap.min.css" media="all" rel="stylesheet" />
+
+        <!-- jQuery -->
+        <script src='./js/libs/jquery-3.3.1.min.js'></script>
+
+        <!-- Require -->
+        <script src='./js/libs/require.js'></script>
     </head>
     <body>
 
@@ -20,74 +26,19 @@ and open the template in the editor.
             <h1 class="dashboard-title">Welcome to Dashboard</h1>
             <div class="table-responsive">
 
-        <table class="table">
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
-              <th>Contact</th>
-              <th>Designation</th>
-              <th>Add Edit User</th>
-            </tr>
-            <tr>
-                    <td>Veeraj </td>
-                    <td>Jadhav</td>
-                    <td>veeraj@gmail.com</td>
-                    <td>1234567890</td>
-                    <td>Frontend Developer</td>
-                    <td>
-                        <button name="Edit" type="submit" value="">Edit</button>
-                        <button name="Delete" type="submit" value="">Delete</button>
-                    </td>
-                    
-            </tr>
-            <tr>
-                    <td>Sagar </td>
-                    <td>Jadhav</td>
-                    <td>sagar@gmail.com</td>
-                    <td>1234567891</td>
-                    <td>Full Satck Developer</td>
-                    <td>
-                            <button name="Edit" type="submit" value="">Edit</button>
-                            <button name="Delete" type="submit" value="">Delete</button>
-                    </td>
-            </tr>
-            <tr>
-                    <td>Akshay </td>
-                    <td>Jadhav</td>
-                    <td>akshay@gmail.com</td>
-                    <td>1234567892</td>
-                    <td>Javascript Developer</td>
-                    <td>
-                            <button name="Edit" type="submit" value="">Edit</button>
-                            <button name="Delete" type="submit" value="">Delete</button>
-                    </td>
-            </tr>
-            <tr>
-                    <td>Nitin </td>
-                    <td>Patil</td>
-                    <td>Nitin@gmail.com</td>
-                    <td>1234567893</td>
-                    <td>Php Developer</td>
-                    <td>
-                            <button name="Edit" type="submit" value="">Edit</button>
-                            <button name="Delete" type="submit" value="">Delete</button>
-                    </td>
-            </tr>
-            <tr>
-                    <td>Amol </td>
-                    <td>Jawle</td>
-                    <td>amol@gmail.com</td>
-                    <td>1234567894</td>
-                    <td>WordPress Developer</td>
-                    <td>
-                            <button name="Edit" type="submit" value="">Edit</button>
-                            <button name="Delete" type="submit" value="">Delete</button>
-                    </td>
-            </tr>
-          </table>  
+        <table class="table" id="users_table"></table>  
           </div>
           </div>
           </div>
+
+        <script>
+                require(['js/controllers/UserController'],
+                        function( UserController ) {
+                        // Configuration loaded now, safe to do other require calls
+                        var userControllerObject = new UserController();
+
+                        userControllerObject.getUsers();
+                });
+        </script>
     </body>
 </html>

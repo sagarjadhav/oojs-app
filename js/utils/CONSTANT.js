@@ -9,7 +9,8 @@ define([
         SERVICE_TYPE_GET : 'GET',
         SERVICE_TYPE_POST : 'POST',
         END_POINTS : {
-            LOGIN : 'login.json'
+            LOGIN : 'login.json',
+            USERS : 'user.json',
         }
     }
 
